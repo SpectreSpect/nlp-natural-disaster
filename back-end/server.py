@@ -1,5 +1,10 @@
 from flask import Flask, request
+import json
+import pickle
+import requests
+from keras.preprocessing.text import Tokenizer
 
+tokenizer = Tokenizer()
 app = Flask(__name__, static_folder='build', static_url_path='/')
 
 
@@ -8,9 +13,27 @@ def index():
     return app.send_static_file('index.html')
 
 
-@app.route('/api/predict')
+@app.route('/api/predict', methods=['POST'])
 def predict():
-    return {'predictioon': [[0.1, 0.2]]}
+    data = json.loads(request.get_data().decode(encoding='ascii'))
+    text = data['text']
+    
+    sequences = tokenizer.texts_to_sequences([text])
+    
+    data_to_send = json.dumps({'instances': sequences})
+    predict_url = 'http://localhost:8605/v1/models/nlp_natural_disaster:predict'
+    r = requests.post(predict_url, data=data_to_send) 
+    predictions = r.json()['predictions'][0]
+    
+    result = 'disaster'
+    if predictions[0] >= 0.5:
+        result = 'not_disaster'
+    
+    parsed_predictions = [round(p * 100.0, 1) for p in predictions]
+    
+    return {'result': result,
+            'not_disaster': parsed_predictions[0],
+            'disaster': parsed_predictions[1]}
 
 
 @app.route('/test')
@@ -24,4 +47,6 @@ def get_test_data():
 
 
 if __name__ == "__main__":
+    with open('tokenizer/tokenizer.pickle', 'rb') as handle:
+        tokenizer = pickle.load(handle)
     app.run(host="0.0.0.0", port=80,debug=True)

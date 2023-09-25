@@ -4,6 +4,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
 from matplotlib import pyplot as plt
 import numpy as np
+import pickle
 
 
 embedding_output_dim = 100
@@ -19,6 +20,10 @@ max_words_count = 3000
 tokenizer = Tokenizer(num_words=max_words_count, filters='!–"—#$%&amp;()*+,-./:;<=>?@[\\]^_`{|}~\t\n\r«»',
                       lower=True, split=' ', char_level=False)
 tokenizer.fit_on_texts(texts)
+
+with open('tokenizer/tokenizer.pickle', 'wb') as handle:
+    pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
 sequences = tokenizer.texts_to_sequences(texts)
 
 max_seq_len = max([len(s) for s in sequences])
