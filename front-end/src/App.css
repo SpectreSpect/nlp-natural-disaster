@@ -24,17 +24,6 @@ body {
   margin-left: 20px;
 }
 
-@media screen and (max-width: 600px) {
-  .page_header {
-    justify-content: center;
-  }
-
-  .header_content__page_header {
-    margin-left: 0;
-  }
-}
-
-
 .header_slash {
   color: #8A939E;
   font-size: 30px;
@@ -120,4 +109,62 @@ body {
 
 .predict-button:active {
   box-shadow: 0 0 5px 1px white;
+}
+
+.prediction-result {
+  font-size: 80px;
+}
+
+.prediction-result--disaster {
+  color: #ffdad2;
+  text-shadow: 0 0 7px #ff2a00;
+}
+
+.prediction-result--not_disaster {
+  color: #b2ffbc;
+  text-shadow: 0 0 7px #00ff1e;
+}
+
+.loader {
+  width: 75px;
+  height: 75px;
+  border: 15px solid white;
+  border-top-color: rgb(61, 206, 255);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from { transform: rotate(0turn) }
+  to { transform: rotate(1turn) }
+}
+
+.prediction-result-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.prediction-clarification {
+  color: rgb(185, 185, 185);
+  font-size: 17px;
+}
+
+@media screen and (max-width: 600px) {
+  .page_header {
+    justify-content: center;
+  }
+
+  .header_content__page_header {
+    margin-left: 0;
+  }
+
+  .prediction-result {
+    font-size: 50px;
+  }
+
+  .prediction-clarification {
+    font-size: 13px;
+  }
 }

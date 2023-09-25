@@ -2,6 +2,7 @@ import './App.css';
 import { ReactComponent as GithubLogo } from './svg/github-mark-white.svg'
 import PageHeader from './PageHeader';
 import PredictForm from './PredictForm';
+import PredictionResult from './PredictionResult';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <PageHeader />
       <div className="predict-form-container">
         <PredictForm />
-      </div>
+      </div>  
+      <PredictionResult />
     </div>
   );
 }
