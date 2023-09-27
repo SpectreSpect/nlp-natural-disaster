@@ -20,8 +20,14 @@ def predict():
     
     sequences = tokenizer.texts_to_sequences([text])
     
+    model_ip = ''
+    if app.debug == True:
+        model_ip = 'localhost'
+    else:
+        model_ip = '175.75.0.7'
+    
     data_to_send = json.dumps({'instances': sequences})
-    predict_url = 'http://localhost:8605/v1/models/nlp_natural_disaster:predict'
+    predict_url = f'http://{model_ip}:8605/v1/models/nlp_natural_disaster:predict'
     r = requests.post(predict_url, data=data_to_send) 
     predictions = r.json()['predictions'][0]
     
@@ -36,17 +42,12 @@ def predict():
             'disaster': parsed_predictions[1]}
 
 
-@app.route('/test')
+@app.route('/api/test')
 def get_test_data():
-    return {
-        'Name':'geek',
-        'Age':'22',
-        'Date':'test date',
-        'programming':'python'
-        }
+    return 'The server is working!'
 
 
 if __name__ == "__main__":
     with open('tokenizer/tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
-    app.run(host="0.0.0.0", port=80,debug=True)
+    app.run(host="0.0.0.0", port=80,debug=False)
