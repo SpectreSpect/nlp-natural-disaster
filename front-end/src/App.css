@@ -125,6 +125,11 @@ body {
   text-shadow: 0 0 7px #00ff1e;
 }
 
+.prediction-result--no_result {
+  color: white;
+  text-shadow: 0 0 7px white;
+}
+
 .loader {
   width: 75px;
   height: 75px;
@@ -151,6 +156,7 @@ body {
   font-size: 17px;
 }
 
+
 @media screen and (max-width: 600px) {
   .page_header {
     justify-content: center;
@@ -167,4 +173,8 @@ body {
   .prediction-clarification {
     font-size: 13px;
   }
+}
+
+.loading_text {
+  font-size: 25px;
 }

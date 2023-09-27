@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-const handle_prediction_submit = (e, input_text, set_result) => {
+const handle_prediction_submit = (e, input_text, set_result, set_is_loading) => {
   e.preventDefault();
+  set_is_loading(true);
 
   const request_options = {
     method: 'POST',
@@ -11,15 +12,18 @@ const handle_prediction_submit = (e, input_text, set_result) => {
   fetch('/api/predict', request_options)
   .then((res) => res.json()
   .then((data) => {
-    set_result(data)
+    set_result(data);
+    set_is_loading(false);
   }))
 }
 
-function PredictForm({set_result}) {
+function PredictForm({set_result, set_is_loading}) {
   const [input_text, set_input_text] = useState('');
 
   return (
-      <form className="predict-form" onSubmit={(e) => handle_prediction_submit(e, input_text, set_result)}>
+      <form className="predict-form" onSubmit={(e) => handle_prediction_submit(e, input_text, 
+                                                                                set_result, 
+                                                                                set_is_loading)}>
         <label className="input-text-label">Input text</label>
         <textarea required
           className="input-textarea"
