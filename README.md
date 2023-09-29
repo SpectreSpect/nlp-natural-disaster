@@ -43,12 +43,33 @@ To start the project you need to enter the following commands.
 Terminal #1:
 ```shell
 cd [project dir]
-
+```
+```shell
 python -m venv venv
+```
+---------Choose one of these options---------
 
+For windows powershell:
+```shell
+venv\Scripts\activate.ps1
+```
+For windows command prompt:
+```shell
+...
+```
+For linux shell:
+```shell
+...
+```
+--------------------...-------------------------
+```shell
 pip install -r requirements.txt
-
-python server.py
+```
+```shell
+cd back-end
+```
+```shell
+python server.py -d
 ```
 
 Terminal #2:
@@ -66,12 +87,12 @@ Terminal #3:
 ```shell
 docker pull tensorflow/serving
 
-docker run --rm -it -v [project dir]/tensorflow-model/models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
+docker run --rm -it -v [project dir]\tensorflow-model\models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
 
 tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
 ```
 
-Now, go to localhost:4000 url.
+Now, go to http://localhost:4000 url.
 
 # Preview
 This is what you will see once you ran the application:
