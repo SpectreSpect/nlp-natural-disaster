@@ -1,4 +1,6 @@
-# NLP natural disaster
+
+
+# NLP natural disaster [![Python](https://img.shields.io/badge/python-3.11.5-brightgreen)](https://www.python.org/downloads/release/python-3115/)
 This project is a website that allows you to classify your text, whether it's about a natural disaster or not.
 
 To classify a text a machine learning model is used, more specifically a reccurent neural network. The model is made using python and [TensorFlow](https://www.tensorflow.org/) library.
