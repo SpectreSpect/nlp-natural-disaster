@@ -41,7 +41,7 @@ In order to start the project in the development mode, you need to enter the com
 you have to open three instances of a terminal that you will use. 
 Each instance will be associated with back-end, front-end or tensorflow/serving model. 
 
-> Note
+> **Note**
 > 
 > In the following commands the path to the project that you've just cloned will be indicated by [project dir].
 > 
@@ -72,7 +72,7 @@ cd [project dir]
 ```shell
 python -m venv venv
 ```
-> Important
+> **Important**
 > 
 > Windows Powershell:
 > ```shell
