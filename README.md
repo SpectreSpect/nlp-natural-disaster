@@ -109,6 +109,9 @@ npm start
 ```
 ### Terminal instance #3 (tensorflow/serving)
 Enter these commands to start the ML model using tensorflow/serving image:
+> **Note**
+>
+> [project dir] in this command should be substituted by you project directory path.
 ```shell
 docker run --rm -it -v [project dir]\tensorflow-model\models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
 ```
