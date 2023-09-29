@@ -37,6 +37,43 @@ Skills that was used to create this project:
 
 # Installation
 
+First, you need to download the project. The full path to the project directory will be called here [project dir].
+To start the project you need to enter the following commands.
+
+Terminal #1:
+```shell
+cd [project dir]
+
+python -m venv venv
+
+pip install -r requirements.txt
+
+python server.py
+```
+
+Terminal #2:
+```shell
+cd [project dir]
+
+cd front-end
+
+npm install
+
+npm start
+```
+
+Terminal #3:
+```shell
+docker pull tensorflow/serving
+
+docker run --rm -it -v [project dir]/tensorflow-model/models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
+
+tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
+```
+
+Now, go to localhost:4000 url.
+
+-----------------------------
 First, you need to download the project. Then open project directory in the terminal and enter the next command:
 
 CHECK THIS COMMAND AGAIN
