@@ -110,19 +110,27 @@ Your app should now be running on [localhost:4000](http://localhost:4000/).
 
 These are all the technologies that was used during creation of this project:
 
-* Languages
-   - Python
-   - JavaScript
-   - HTML
-   - CSS
-* Frameworks/Libraries
-   - TensorFlow
-   - Flask
-   - React
-* Other
-   - Docker
-   - TensorFlow/serving
-   - Git
+> **Languages**
+> 
+> [![Python](https://img.shields.io/badge/Python-%233572A5?logo=python&logoColor=white)](https://www.python.org/)
+> [![JavaScript](https://img.shields.io/badge/JavaScript-%23F7E018?logo=javascript&logoColor=white)](https://en.wikipedia.org/wiki/JavaScript)
+> [![HRML5](https://img.shields.io/badge/HTML5-%23E44D26?logo=HTML5&logoColor=white)](https://en.wikipedia.org/wiki/HTML5)
+> [![CSS3](https://img.shields.io/badge/CSS-%23214CE5?logo=css3&logoColor=white)](https://en.wikipedia.org/wiki/CSS)
+
+
+> **Frameworks/Libraries**
+>
+> [![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF9300?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+> [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/2.3.x/)
+> [![ReactJS](https://img.shields.io/badge/ReactJS-%2311C8E8?logo=react&logoColor=white)](https://react.dev/)
+
+
+
+> **Other**
+> 
+> [![Docker](https://img.shields.io/badge/Docker-%231D63ED?logo=docker&logoColor=white)](https://www.docker.com/)
+> [![TensorFlowServing](https://img.shields.io/badge/TensorFlow%2Fserving-%23F0910E?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/tfx/guide/serving)
+> [![Git](https://img.shields.io/badge/Git-%23EA330E?logo=git&logoColor=white)](https://git-scm.com/)
 
 # Preview
 This is what you will see once you ran the application:
