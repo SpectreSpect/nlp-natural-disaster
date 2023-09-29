@@ -37,31 +37,50 @@ Skills that was used to create this project:
 
 # Installation
 
-First, you need to download the project. The full path to the project directory will be called here [project dir].
-To start the project you need to enter the following commands.
+In order to start the project in the development mode, you need to enter the commands below. For that
+you have to open three instances of a terminal that you will use. 
+Each instance will be associated with back-end, front-end or tensorflow/serving model. 
 
-Terminal #1:
+> **Note**
+> 
+> In the following commands the path to the project that you've just cloned will be indicated by [project dir].
+> 
+> **Example**
+> 
+> Assume that you cloned this project to this directory:
+> ```shell
+> C:\Projects\
+> ```
+>  Then [project dir] is:
+> ```shell
+> C:\Projects\nlp-natural-disaster\
+> ```
+> So if the command, that you need to enter is:
+> ```shell
+> cd [project dir]
+> ```
+> Then you should enter:
+> ```shell
+> cd C:\Projects\nlp-natural-disaster\
+> ```
+
+### Terminal instance #1 (back-end)
+Enter these commands to start back-end local server:
 ```shell
 cd [project dir]
 ```
 ```shell
 python -m venv venv
 ```
----------Choose one of these options---------
-
-For windows powershell:
-```shell
-venv\Scripts\activate.ps1
-```
-For windows command prompt:
-```shell
-...
-```
-For linux shell:
-```shell
-...
-```
---------------------...-------------------------
+> Windows Powershell:
+> ```shell
+> venv\Scripts\activate.ps1
+> ```
+>
+> Windows Command Prompt:
+> ```shell
+> venv\Scripts\activate
+> ```
 ```shell
 pip install -r requirements.txt
 ```
@@ -72,27 +91,30 @@ cd back-end
 python server.py -d
 ```
 
-Terminal #2:
+### Terminal instance #2 (front-end)
+Enter these commands to start fron-end local server:
 ```shell
 cd [project dir]
-
+```
+```shell
 cd front-end
-
+```
+```shell
 npm install
-
+```
+```shell
 npm start
 ```
-
-Terminal #3:
+### Terminal instance #3 (tensorflow/serving)
+Enter these commands to start the ML model using tensorflow/serving image:
 ```shell
-docker pull tensorflow/serving
-
 docker run --rm -it -v [project dir]\tensorflow-model\models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
-
+```
+```shell
 tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
 ```
-
-Now, go to http://localhost:4000 url.
+### Open the application
+To open the application you need to go to http://localhost:4000 url.
 
 # Preview
 This is what you will see once you ran the application:
