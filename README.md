@@ -37,40 +37,41 @@ Skills that was used to create this project:
 
 # Installation
 
-In order to install this project first you have to download the project using git. To do that you need to copy this link:
-![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/b15d91e2-ab5d-475f-a145-c765f0985e23)
-Then you need to open a terminal and go to the folder where you are going to put this project. The you need to write the following command using 
-the link you have just copied:
+First, you need to download the project. Then open project directory in the terminal and enter the next command:
 
-```shell
-git clode https://github.com/SpectreSpect/nlp-natural-disaster.git
+CHECK THIS COMMAND AGAIN
+```python
+python -m venv venv
 ```
-After that the project will be downloaded in the previously chosen folder.
 
-In order to open this project for development it is good to open this folder in some text editor (VScode, sublime text, etc). I personally use VSCode.
-To start the project for development you need to open in the terminal a folder called "front-end" and write the following command:
+After that you need to enter this:
+```python
+pip install -r requirements.txt
+```
+Now you have a virtual envorinment with all required packages installed. The next thing that you need to do is to open in the same
+terminal the [project directory]/back-end directory and then enter this command:
+```shell
+python server.py
+```
+The back-end server is now running. Now, open another instance of a terminal in the [project directory]/front-end and enter this:
 ```shell
 npm start
 ```
-It will start the react server, which is a front-end of the application. The website should be open automatically. If it didn't you can open it manually
-by opening the following url in your browser:
-```url
-http://localhost:4000/
-```
-
-Now we need to start the back-end server. In order to do that you need to open another tab in your terminal (or just open another instans of the ternimal) and then go to the back-end folder
-that is located in the main folder of the project. Then you need to enter the following command:
-```py
-python server.py
-```
-
-The next step is to start the model for server to be able to send requests to it. For that you need to have Docker installed.
-Then you need to pull the tensorflow/serving image. You can do that by entering the following command in the terminal:
+Now front-end is working, you can visit the website that you've just launched going to localhost:4000 url.
+The last thing that we have to do is to start the machine learning model, that will classify text input.
+In order to do that you need to pull the tensorflow/serving docker image. To do that, simply enter this command in the terminal:
 ```docker
 docker pull tensorflow/serving
 ```
-
-Then you need to create a ...
+Now that you have the tensorflow/serving image installed, you need to enter the following command in the terminal:
+```docker
+docker run --rm -it -v [path to the model]:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
+```
+The tensorflow/serving container shell should be opened in the terminal. Now enter this command:
+```tensorflow/serving
+tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
+```
+The model is running now.
 
 # Preview
 This is what you will see once you ran the application:
