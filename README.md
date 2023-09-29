@@ -29,7 +29,7 @@ Each instance will be associated with back-end, front-end or tensorflow/serving 
 
 > **Note**
 > 
-> In the following commands the path to the project that you've just cloned will be indicated by [project dir].
+> In the following commands the path to the project that you've just cloned will be indicated by ``[project dir]``.
 > 
 > **Example**
 > 
@@ -37,7 +37,7 @@ Each instance will be associated with back-end, front-end or tensorflow/serving 
 > ```shell
 > C:\Projects\
 > ```
->  Then [project dir] is:
+>  Then ``[project dir]`` is:
 > ```shell
 > C:\Projects\nlp-natural-disaster\
 > ```
@@ -97,7 +97,7 @@ npm start
 Make sure that you have [Docker](https://www.docker.com/) installed and running.
 > **Note**
 >
-> [project dir] in this command should be substituted by you project directory path.
+> ``[project dir]`` in this command should be substituted by you project directory path.
 ```shell
 docker run --rm -it -v [project dir]\tensorflow-model\models:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
 ```
