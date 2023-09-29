@@ -1,6 +1,10 @@
 
-
-# NLP natural disaster [![Python](https://img.shields.io/badge/python-3.11.5-brightgreen)](https://www.python.org/downloads/release/python-3115/)
+[![Docker](https://img.shields.io/badge/docker-blue)](https://www.python.org/downloads/release/python-3115/)
+[![ReactJS](https://img.shields.io/badge/ReactJS-%2311C8E8?logo=react&logoColor=white)](https://www.python.org/downloads/release/python-3115/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF9300?logo=tensorflow&logoColor=white)](https://www.python.org/downloads/release/python-3115/)
+[![Python](https://img.shields.io/badge/Python-%233572A5?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3115/)
+[![Python](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=white)](https://www.python.org/downloads/release/python-3115/)
+# NLP natural disaster [![Python](https://img.shields.io/badge/python-3.11.5-brightgreen)](https://www.python.org/downloads/release/python-3115/) 
 This project is a website that allows you to classify your text, whether it's about a natural disaster or not.
 
 To classify a text a machine learning model is used, more specifically a reccurent neural network. The model is made using python and [TensorFlow](https://www.tensorflow.org/) library.
@@ -10,36 +14,9 @@ The website is made using two libraries: [React](https://react.dev/) for front-e
 
 [Docker](https://www.docker.com/) and [TensorFlow/serving](https://www.tensorflow.org/tfx/guide/serving) was used to deploy the model.
 
-# Pet project
+# Running Locally
 
-This project is a pet project that is created only for practicing, learning and demonstrating my skills. Here are technologies that was used to create this project:
-
-Languages:
-* Python
-* JavaScript
-* HTML
-* CSS
-
-Libraries:
-* TensorFlow (python)
-* Flask (python)
-* React (js, html, css)
-
-Other:
-* TensorFlow/serving
-* Docker
-* Git
-
-Skills that was used to create this project:
-* Ability to create a natural language processing models that can analyze a text and classify it.
-* Ability to create a simple website using React as front-end and Flask as back-end.
-* Ability to deploy a model on a site, allowing users to enter input data (text) and get subsequent model predictions.
-* Ability to work with Docker.
-* Ability to deploy a model and a website on a remote server.
-
-# Installation
-
-In order to start the project in the development mode, you need to enter the commands below. For that
+In order to run the project locally, you need to enter the commands below. For that
 you have to open three instances of a terminal that you will use. 
 Each instance will be associated with back-end, front-end or tensorflow/serving model. 
 
@@ -67,7 +44,7 @@ Each instance will be associated with back-end, front-end or tensorflow/serving 
 > ```
 
 ### Terminal instance #1 (back-end)
-Enter these commands to start back-end local server:
+Make sure that you have [python](https://www.python.org/downloads/release/python-3115/) installed.
 ```shell
 cd [project dir]
 ```
@@ -96,7 +73,7 @@ python server.py -d
 ```
 
 ### Terminal instance #2 (front-end)
-Enter these commands to start fron-end local server:
+Make sure that you have [node.js](https://nodejs.org/en) installed.
 ```shell
 cd [project dir]
 ```
@@ -110,7 +87,7 @@ npm install
 npm start
 ```
 ### Terminal instance #3 (tensorflow/serving)
-Enter these commands to start the ML model using tensorflow/serving image:
+Make sure that you have [Docker](https://www.docker.com/) installed and running.
 > **Note**
 >
 > [project dir] in this command should be substituted by you project directory path.
@@ -120,14 +97,33 @@ docker run --rm -it -v [project dir]\tensorflow-model\models:/models -p 8605:860
 ```shell
 tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
 ```
-### Open the application
-To open the application you need to go to http://localhost:4000 url.
+Your app should now be running on [localhost:4000](http://localhost:4000/).
+
+# Techonlogies used
+
+These are all the technologies that was used during creation of this project:
+
+* Languages
+   - Python
+   - JavaScript
+   - HTML
+   - CSS
+* Frameworks/Libraries
+   - TensorFlow
+   - Flask
+   - React
+* Other
+   - Docker
+   - TensorFlow/serving
+   - Git
 
 # Preview
 This is what you will see once you ran the application:
+
 ![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/a5c350b5-82e2-44da-895d-ab13109e3468)
 
 Let's enter some text for the model to anylize:
+
 ![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/ff3ff15a-5c11-42b6-b958-ffeb30c9205f)
 
 After you click the "predict" button, the website will send a request to the model to analyze the entered text and return results. Let's try it:
