@@ -1,8 +1,14 @@
+import argparse
 from flask import Flask, request
 import json
 import pickle
 import requests
 from keras.preprocessing.text import Tokenizer
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-d", "--debug", action=argparse.BooleanOptionalAction, help="Enable debug mode")
+args = parser.parse_args()
 
 tokenizer = Tokenizer()
 app = Flask(__name__, static_folder='build', static_url_path='/')
@@ -50,4 +56,4 @@ def get_test_data():
 if __name__ == "__main__":
     with open('tokenizer/tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
-    app.run(host="0.0.0.0", port=80,debug=False)
+    app.run(host="0.0.0.0", port=80,debug=args.debug)
