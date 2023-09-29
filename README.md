@@ -73,43 +73,6 @@ tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster -
 
 Now, go to localhost:4000 url.
 
------------------------------
-First, you need to download the project. Then open project directory in the terminal and enter the next command:
-
-CHECK THIS COMMAND AGAIN
-```python
-python -m venv venv
-```
-
-After that you need to enter this:
-```python
-pip install -r requirements.txt
-```
-Now you have a virtual envorinment with all required packages installed. The next thing that you need to do is to open in the same
-terminal the [project directory]/back-end directory and then enter this command:
-```shell
-python server.py
-```
-The back-end server is now running. Now, open another instance of a terminal in the [project directory]/front-end and enter this:
-```shell
-npm start
-```
-Now front-end is working, you can visit the website that you've just launched going to localhost:4000 url.
-The last thing that we have to do is to start the machine learning model, that will classify text input.
-In order to do that you need to pull the tensorflow/serving docker image. To do that, simply enter this command in the terminal:
-```docker
-docker pull tensorflow/serving
-```
-Now that you have the tensorflow/serving image installed, you need to enter the following command in the terminal:
-```docker
-docker run --rm -it -v [path to the model]:/models -p 8605:8605 --entrypoint /bin/bash tensorflow/serving
-```
-The tensorflow/serving container shell should be opened in the terminal. Now enter this command:
-```tensorflow/serving
-tensorflow_model_server --rest_api_port=8605 --model_name=nlp_natural_disaster --model_base_path=/models/
-```
-The model is running now.
-
 # Preview
 This is what you will see once you ran the application:
 ![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/a5c350b5-82e2-44da-895d-ab13109e3468)
