@@ -133,19 +133,7 @@ These are all the technologies that was used during creation of this project:
 > [![Git](https://img.shields.io/badge/Git-%23EA330E?logo=git&logoColor=white)](https://git-scm.com/)
 
 # Preview
-This is what you will see once you ran the application:
+Here is how application looks like when you run it:
+![app_preview](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/25cd1fc0-7c4a-4dcc-90c0-b3e69b12d2d7)
 
-![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/a5c350b5-82e2-44da-895d-ab13109e3468)
 
-Let's enter some text for the model to anylize:
-
-![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/ff3ff15a-5c11-42b6-b958-ffeb30c9205f)
-
-After you click the "predict" button, the website will send a request to the model to analyze the entered text and return results. Let's try it:
-![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/314dd991-ad1d-4c44-8266-449a07fd6ed3)
-As you can see, the model thinks that the text "Everyone loves cats!" is not a text about natural disasters (which is correct, as you understand), hence the green text "not a disaster". 
-Below the green text you can see more concrete information about the model prediction, specifically, the model is 46.8% sure that this text is about a disaster and 53.2% that it's not about a disaster.
-
-Now let's try to use another prompt:
-![image](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/2afd9ee4-ef78-49ad-8eb2-0d1c54395ea1)
-Now, as you can see, the model thinks that this text is about a natural disaster, which is also correct.
