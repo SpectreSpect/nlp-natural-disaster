@@ -15,7 +15,7 @@
 This project is a website that allows you to classify input text using a neural network, whether it is about a natural disaster or not.
 
 To classify text, a machine learning model, or more precisely a recurrent neural network, is used. The model was made using python and [TensorFlow](https://www.tensorflow.org/) library.
-The data used to train the model was taken from Kaggle, specifically from the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) competition.
+The data used to train the model was taken from [Kaggle](https://www.kaggle.com/), specifically from the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) competition.
 
 The website was created using two libraries: [React](https://react.dev/) for front-end and [Flask](https://flask.palletsprojects.com/en/2.3.x/) for back-end.
 
