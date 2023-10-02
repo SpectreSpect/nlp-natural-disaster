@@ -23,17 +23,16 @@ The website was created using two libraries: [React](https://react.dev/) for fro
 
 # Running Locally
 
-In order to run the project locally, you need to enter the commands below. For that
-you have to open three instances of a terminal that you will use. 
-Each instance will be associated with back-end, front-end or tensorflow/serving model. 
+To run the project locally, you need to enter the commands below. To do this, you will need to open 3 instances of terminal that you will be using. 
+Each instance will be associated with back-end, front-end or tensorflow/serving model.
 
 > **Note**
 > 
-> In the following commands the path to the project that you've just cloned will be indicated by ``[project dir]``.
+> In the following commands, the path to the newly cloned project will be specified as ``[project dir]``.
 > 
 > **Example**
 > 
-> Assume that you cloned this project to this directory:
+> Let's say you cloned this project into this directory:
 > ```shell
 > C:\Projects\
 > ```
@@ -41,17 +40,17 @@ Each instance will be associated with back-end, front-end or tensorflow/serving 
 > ```shell
 > C:\Projects\nlp-natural-disaster\
 > ```
-> So if the command, that you need to enter is:
+> So if you need to enter a command:
 > ```shell
 > cd [project dir]
 > ```
-> Then you should enter:
+> Then, instead, you should enter this:
 > ```shell
 > cd C:\Projects\nlp-natural-disaster\
 > ```
 
 ### Terminal instance #1 (back-end)
-Make sure that you have [python](https://www.python.org/downloads/release/python-3115/) installed.
+Make sure that you have [Python](https://www.python.org/downloads/release/python-3115/) installed.
 ```shell
 cd [project dir]
 ```
@@ -108,7 +107,7 @@ Your app should now be running on [localhost:4000](http://localhost:4000/).
 
 # Techonlogies used
 
-These are all the technologies that was used during creation of this project:
+Here are all the technologies that were used to create this project:
 
 > **Languages**
 >
@@ -133,7 +132,7 @@ These are all the technologies that was used during creation of this project:
 > [![Git](https://img.shields.io/badge/Git-%23EA330E?logo=git&logoColor=white)](https://git-scm.com/)
 
 # Preview
-Here is how application looks like when you run it:
+This is what the application looks like when it's running:
 ![app_preview](https://github.com/SpectreSpect/nlp-natural-disaster/assets/52841087/25cd1fc0-7c4a-4dcc-90c0-b3e69b12d2d7)
 
 
